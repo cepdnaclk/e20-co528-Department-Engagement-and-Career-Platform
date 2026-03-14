@@ -108,8 +108,8 @@ table {
   border-radius: 5px 5px 0 0;
 }
 table thead {
-  background-color: #009879;
-  color: #ffffff;
+  background-color: #f0f0f0; /* Ash color for header */
+  color: #333333; /* Darker text for contrast on ash */
   text-align: left;
 }
 table th,
@@ -117,18 +117,21 @@ table td {
   padding: 12px 15px;
 }
 table tbody tr {
+  background-color: #ffffff; /* White background for regular rows */
   border-bottom: 1px solid #dddddd;
 }
 table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
+  background-color: #f9f9f9; /* Very light ash for alternate rows */
 }
 table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid #b0b0b0; /* Ash color for bottom border */
 }
 @media (prefers-color-scheme: dark) {
   table { box-shadow: 0 0 20px rgba(173, 164, 164, 0.05); }
-  table tbody tr:nth-of-type(even) { background-color: #2a2a2a; }
-  table tbody tr { border-bottom: 1px solid #444444; }
+  table thead { background-color: #333333; color: #f0f0f0; } /* Dark ash header, light text */
+  table tbody tr { background-color: #1a1a1a; border-bottom: 1px solid #444444; } /* Dark background for rows */
+  table tbody tr:nth-of-type(even) { background-color: #2a2a2a; } /* Slightly lighter dark alternate rows */
+  table tbody tr:last-of-type { border-bottom: 2px solid #666666; } /* Dark ash bottom border */
 }
 </style>
 
