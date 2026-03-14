@@ -56,6 +56,7 @@ The application uses a **Microservices Architecture** with three client layers:
 ```
 
 ### Backend Microservices
+
 | Service | Port | Description |
 |---|---|---|
 | API Gateway | 5000 | Routes requests to downstream services |
@@ -74,6 +75,7 @@ The application uses a **Microservices Architecture** with three client layers:
 - **Expo Go** app on your phone (for mobile testing)
 
 ## Tech Stack
+
 | Layer | Technology |
 |---|---|
 | Web Frontend | React.js, Vite, CSS3 |
