@@ -126,4 +126,4 @@ services:
     depends_on:
       - api-gateway
     ports:
-      - "8080:80"
+      - "${FRONTEND_PORT}:80"
