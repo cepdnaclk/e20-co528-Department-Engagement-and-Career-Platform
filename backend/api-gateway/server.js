@@ -9,16 +9,16 @@ app.use(cors({ origin: '*', credentials: true }));
 // Serve static uploads
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
-// Proxy configuration — each service handles its own /api/* prefix
+// Proxy configuration -- each service handles its own /api/* prefix
 const services = [
-  { path: '/api/auth', target: 'http://localhost:5001' },
-  { path: '/api/feed', target: 'http://localhost:5002' },
-  { path: '/api/jobs', target: 'http://localhost:5003' },
-  { path: '/api/events', target: 'http://localhost:5004' },
-  { path: '/api/research', target: 'http://localhost:5005' },
-  { path: '/api/messages', target: 'http://localhost:5006' },
-  { path: '/api/notifications', target: 'http://localhost:5007' },
-  { path: '/api/analytics', target: 'http://localhost:5008' },
+  { path: '/api/auth', target: process.env.AUTH_SERVICE_URL || 'http://localhost:5001' },
+  { path: '/api/feed', target: process.env.FEED_SERVICE_URL || 'http://localhost:5002' },
+  { path: '/api/jobs', target: process.env.JOBS_SERVICE_URL || 'http://localhost:5003' },
+  { path: '/api/events', target: process.env.EVENTS_SERVICE_URL || 'http://localhost:5004' },
+  { path: '/api/research', target: process.env.RESEARCH_SERVICE_URL || 'http://localhost:5005' },
+  { path: '/api/messages', target: process.env.MESSAGING_SERVICE_URL || 'http://localhost:5006' },
+  { path: '/api/notifications', target: process.env.NOTIFICATIONS_SERVICE_URL || 'http://localhost:5007' },
+  { path: '/api/analytics', target: process.env.ANALYTICS_SERVICE_URL || 'http://localhost:5008' },
 ];
 
 services.forEach((svc) => {
@@ -32,7 +32,7 @@ services.forEach((svc) => {
 
 // WebSocket proxy for socket.io
 app.use('/socket.io', createProxyMiddleware({
-  target: 'http://localhost:5006',
+  target: process.env.MESSAGING_SERVICE_URL || 'http://localhost:5006',
   changeOrigin: true,
   ws: true
 }));
