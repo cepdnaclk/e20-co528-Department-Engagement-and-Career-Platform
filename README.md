@@ -53,6 +53,20 @@ The application uses a **Microservices Architecture** with three client layers:
 
 ## Setup & Run
 
+### Run with Docker Compose
+Create a `.env` file in the project root with:
+```env
+MONGODB_URI=
+JWT_SECRET=
+JWT_REFRESH_SECRET=
+API_BASE_URL=
+FRONTEND_PORT=
+```
+Then start the stack:
+```bash
+docker compose up --build
+```
+
 ### Step 1: Configure Environment
 Edit `backend/.env` with your MongoDB Atlas connection string:
 ```env
