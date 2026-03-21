@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import logo from '../assets/logo.jpg';
 
 export default function Login() {
   const { login } = useAuth();
@@ -24,7 +25,9 @@ export default function Login() {
     <div className="auth-page">
       <div className="auth-container slide-up">
         <div className="auth-header">
-          <div className="auth-logo">D</div>
+          <div className="auth-logo">
+            <img src={logo} alt="DECP Logo" style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: 'inherit' }} />
+          </div>
           <h2>Welcome Back</h2>
           <p>Sign in to your DECP account</p>
         </div>

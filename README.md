@@ -52,7 +52,6 @@ The application uses a **Microservices Architecture** with three client layers:
 - **Expo Go** app on your phone (for mobile testing)
 
 ## Setup & Run
-
 ### Run with Docker Compose
 Create a `.env` file in the project root with:
 ```env
@@ -66,7 +65,6 @@ Then start the stack:
 ```bash
 docker compose up --build
 ```
-
 ### Step 1: Configure Environment
 Edit `backend/.env` with your MongoDB Atlas connection string:
 ```env
@@ -78,7 +76,6 @@ JWT_EXPIRES_IN=1h
 JWT_REFRESH_EXPIRES_IN=7d
 CLIENT_URL=http://localhost:5173
 ```
-
 ### Step 2: Start Backend Microservices
 ```bash
 cd backend
@@ -86,7 +83,6 @@ npm install
 npm run dev
 ```
 All 9 processes (API Gateway + 8 microservices) start concurrently.
-
 ### Step 3: Seed Database (first time only)
 ```bash
 cd backend
@@ -104,7 +100,6 @@ npm install
 npm run dev
 ```
 Open **http://localhost:5173** in your browser.
-
 ### Step 5: Start Mobile App (optional)
 ```bash
 cd mobile
@@ -152,7 +147,6 @@ Scan the QR code with **Expo Go** on your phone.
 │   └── App.js
 └── docs/                     # Project documentation
 ```
-
 ## Links
 - [Project Repository](https://github.com/cepdnaclk/E20-CO528-Department-Engagement-and-Career-Platform)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
